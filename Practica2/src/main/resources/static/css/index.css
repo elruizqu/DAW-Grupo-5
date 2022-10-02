@@ -18,7 +18,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 .subtitle h2{
-    margin-top: 100px;
+    margin-top: 70px;
 }
 
 p.test{
@@ -30,7 +30,7 @@ p.test{
     left: 300px;
 }
 
-.relative{
+.relativerep{
     position: relative;
     top: 65px;
     left: 200px;
@@ -42,6 +42,34 @@ p.test{
     position: relative;
     left: 200px;
     top: 50px;
+    width: 160px;
+    cursor: pointer;
+}
+
+.absoluteserv{
+    position: absolute;
+    top: 420px;
+    left: 500px;
+}
+
+.servicios{
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    width: 160px;
+    cursor: pointer;
+}
+
+.absolutefin{
+    position: absolute;
+    top: 420px;
+    left: 800px;
+}
+
+.financiamiento{
+    position: absolute;
+    top: 500px;
+    left: 800px;
     width: 160px;
     cursor: pointer;
 }
