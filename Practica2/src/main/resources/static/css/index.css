@@ -46,7 +46,6 @@ p.test{
     cursor: pointer;
 }
 
-<<<<<<< Updated upstream
 .absoluteserv{
     position: absolute;
     top: 420px;
@@ -74,7 +73,7 @@ p.test{
     width: 160px;
     cursor: pointer;
 }
-=======
+
 .button { 
   background-color: darkgoldenrod;
   border: none;
@@ -99,4 +98,4 @@ p.test{
     box-sizing: border-box; /*modifica el tamano para que concida con los 200px que queriamos*/ 
 
 }
->>>>>>> Stashed changes
+
