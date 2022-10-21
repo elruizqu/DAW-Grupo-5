@@ -16,6 +16,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     height: 100%;
     background:url(https://img.freepik.com/foto-gratis/equipo-peluqueria-espacio-copia_23-2148352849.jpg?w=740&t=st=1666150332~exp=1666150932~hmac=f8ef48603b83e5d86ab121c55367b20ccde1549d3da1952b17f48ea9e0418663) no-repeat top center #efeff1;
     background-size:cover;
+    
+  
 }
 .thx{
     position: fixed;
@@ -122,4 +124,37 @@ p {
 a {
     text-decoration: none;
     color: #008CBA;
+}
+
+
+
+
+/*css foto productos*/
+.container {
+  position: absolute;
+  max-width: 500px; /* Maximum width */
+  margin: 0 auto; /* Center it */
+  top: 100px;
+  left: 1px;
+  
+}
+
+.container .content {
+  position: absolute; /* Position the background text */
+  bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1; /* Grey text */
+  height: 20px;
+  width: 93%; /* Full width */
+  padding: 55px; /* Some padding */
+  top: 290px;
+}
+
+
+.back2 { 
+  background:  url(https://img.freepik.com/foto-gratis/equipo-peluqueria-espacio-copia_23-2148352849.jpg?w=740&t=st=1666150332~exp=1666150932~hmac=f8ef48603b83e5d86ab121c55367b20ccde1549d3da1952b17f48ea9e0418663) no-repeat top center ; 
+  background-size:100%;
+  background-attachment: fixed;
+
 }
