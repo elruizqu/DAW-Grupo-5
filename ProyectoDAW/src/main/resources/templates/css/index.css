@@ -1,0 +1,177 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 18, 2022, 8:49:43 PM
+    Author     : owenm
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Oswald:500');
+.back{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background:url(https://img.freepik.com/foto-gratis/equipo-peluqueria-espacio-copia_23-2148352849.jpg?w=740&t=st=1666150332~exp=1666150932~hmac=f8ef48603b83e5d86ab121c55367b20ccde1549d3da1952b17f48ea9e0418663) no-repeat top center #efeff1;
+    background-size:cover;
+
+
+}
+.thx{
+    position: fixed;
+    left:50%;
+    transform:translateX(-50%);
+    bottom: 15px;
+}
+nav{
+    width: 100%;
+
+    top:50px;
+    text-align:center;
+    position: relative;
+    top: 550px;
+
+
+}
+nav a{
+    font-family: 'Oswald', sans-serif;
+    font-weight:500;
+    text-transform:uppercase;
+    text-decoration:none;
+    color:#16151b;
+    margin:0 15px;
+    font-size:16px;
+    letter-spacing:1px;
+    position:relative;
+    display:inline-block;
+}
+nav a:before{
+    content:'';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background:#16151b;
+    top:47%;
+    animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+nav a:hover:before{
+    animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+
+}
+@keyframes in{
+    0%{
+        width: 0;
+        left:0;
+        right:auto;
+    }
+    100%{
+        left:0;
+        right:auto;
+        width: 100%;
+    }
+}
+@keyframes out{
+    0%{
+        width:100%;
+        left: auto;
+        right: 0;
+    }
+    100%{
+        width: 0;
+        left: auto;
+        right: 0;
+    }
+}
+@keyframes show{
+    0%{
+        opacity:0;
+        transform:translateY(-10px);
+    }
+    100%{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+
+}
+/*boque de texto pantalla de inicio*/
+
+.block {
+    position: relative;
+    top: 300px;
+    left: 200px;
+    width:1000px;
+    height: 150px;
+    padding: 20px;
+    border: 20px white;
+    box-sizing: border-box; /*modifica el tamano para que concida con los 200px que queriamos*/
+
+}
+
+p {
+    text-indent: 50px;
+    text-align: justify;
+    letter-spacing: 3px;
+    padding: 200px;
+    border: 20px whitesmoke;
+}
+
+a {
+    text-decoration: none;
+    color: #008CBA;
+}
+
+/*fondo con scroll para demas pantallas*/
+.back2 {
+    background:  url(https://img.freepik.com/foto-gratis/equipo-peluqueria-espacio-copia_23-2148352849.jpg?w=740&t=st=1666150332~exp=1666150932~hmac=f8ef48603b83e5d86ab121c55367b20ccde1549d3da1952b17f48ea9e0418663) no-repeat top center ;
+    background-size:100%;
+    background-attachment: fixed;
+
+}
+
+/*tamano y ubicacion de carrusel*/
+.carrusel{
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    width: 600px;
+    height: 80px;
+}
+
+/*texto carrusel*/
+.texto-encima{
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    top: 30px;
+    left: 170px;
+}
+
+/*bordes redondeados de imagenes*/
+.imagen {
+    width: 600px;
+    height: 350px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+.cards{
+    padding: 20px;
+}
+
+.card-text{
+    padding: 40px;
+}
+.bot1{
+  margin-bottom: 10px;
+    
+}
+
+.table{
+    position: absolute;
+    top: 300px;
+    left: 10px;
+    
+}
