@@ -22,14 +22,34 @@ import org.springframework.web.bind.annotation.PostMapping;
  * @author elena
  */
 @Controller
-public class CitaController {
+public class SalonController {
     @Autowired
     private ICitaService citaService;
     
     @Autowired
     private IServicioService servicioService;
     
-    @GetMapping("/cita")
+    @GetMapping("/home")
+    public String index(){
+        return "index";
+    }
+    
+    @GetMapping("/salonServicios")
+    public String servicios(){
+        return "Servicios";
+    }
+    
+    @GetMapping("/salonProductos")
+    public String productos(){
+        return "Productos";
+    }
+    
+    @GetMapping("/salonPromociones")
+    public String promociones(){
+        return "Promociones";
+    }
+    
+    @GetMapping("/salonCita")
     public String index(Model model){
         List<Cita> listaCita = citaService.getAllCita();
         model.addAttribute("titulo", "Citas Agendadas");
@@ -37,7 +57,7 @@ public class CitaController {
         return "citas";
     }
     
-    @GetMapping("/citaN")
+    @GetMapping("/salonAgendar")
     public String crearCita(Model model){
         List<Servicio> listaServicios = servicioService.listServicio();
         model.addAttribute("cita", new Cita());
@@ -45,15 +65,15 @@ public class CitaController {
         return "crear";
     }
     
-    @GetMapping("/servicios")
-    public String servicios (){
-        return "Servicios";
+    @GetMapping("/salonContacto")
+    public String contacto(){
+        return "Contacto";
     }
     
     @PostMapping("/save")
     public String guardarCita(@ModelAttribute Cita cita){
         citaService.saveCita(cita);
-        return "redirect:/cita";
+        return "redirect:/salonCita";
     }
     
     @GetMapping("/editCita/{id}")
@@ -68,6 +88,6 @@ public class CitaController {
     @GetMapping("/delete/{id}")
     public String eliminarCita(@PathVariable("id") Long idCita){
         citaService.delete(idCita);
-        return "redirect:/cita";
+        return "redirect:/salonCita";
     }
 }
