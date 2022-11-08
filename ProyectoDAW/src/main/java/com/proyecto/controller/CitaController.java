@@ -45,6 +45,11 @@ public class CitaController {
         return "crear";
     }
     
+    @GetMapping("/servicios")
+    public String servicios (){
+        return "Servicios";
+    }
+    
     @PostMapping("/save")
     public String guardarCita(@ModelAttribute Cita cita){
         citaService.saveCita(cita);
