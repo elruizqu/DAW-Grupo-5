@@ -1,0 +1,48 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Oct 25, 2022, 9:11:19 PM
+    Author     : owenm
+*/
+
+
+.back2 {
+    background:  url(https://img.freepik.com/foto-gratis/equipo-peluqueria-espacio-copia_23-2148352849.jpg?w=740&t=st=1666150332~exp=1666150932~hmac=f8ef48603b83e5d86ab121c55367b20ccde1549d3da1952b17f48ea9e0418663) no-repeat top center ;
+    background-size:100%;
+    background-attachment: fixed;
+
+}
+
+
+
+
+/*tamano y ubicacion de carrusel*/
+.carrusel{
+    position: absolute;
+    top: 250px;
+    left: 400px;
+    width: 600px;
+    height: 80px;
+}
+
+/*texto carrusel*/
+.texto-encima{
+    background-color: white;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: absolute;
+    top: 30px;
+    left: 170px;
+}
+
+/*bordes redondeados de imagenes*/
+.imagen {
+    width: 600px;
+    height: 350px;
+    border-radius: 15px 15px 15px 15px;
+}
+
+
+

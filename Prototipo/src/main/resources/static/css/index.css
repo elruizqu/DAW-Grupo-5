@@ -96,7 +96,7 @@ nav a:hover:before{
 
 
 }
-/*boque de texto pantalla de inicio*/
+/*bloque de texto pantalla de inicio*/
 
 .block {
     position: relative;
@@ -131,32 +131,11 @@ a {
 
 }
 
-/*tamano y ubicacion de carrusel*/
-.carrusel{
-    position: absolute;
-    top: 250px;
-    left: 400px;
-    width: 600px;
-    height: 80px;
-}
 
-/*texto carrusel*/
-.texto-encima{
-    background-color: white;
-    padding-left: 15px;
-    padding-right: 15px;
-    position: absolute;
-    top: 30px;
-    left: 170px;
-}
 
-/*bordes redondeados de imagenes*/
-.imagen {
-    width: 600px;
-    height: 350px;
-    border-radius: 15px 15px 15px 15px;
-}
 
+
+/*CSS de productos*/
 .cards{
     padding: 20px;
 }
