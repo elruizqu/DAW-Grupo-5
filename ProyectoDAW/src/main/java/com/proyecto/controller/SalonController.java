@@ -67,7 +67,7 @@ public class SalonController {
     
     @GetMapping("/salonContacto")
     public String contacto(){
-        return "Contacto";
+        return "Contacto/Contacto";
     }
     
     @PostMapping("/save")

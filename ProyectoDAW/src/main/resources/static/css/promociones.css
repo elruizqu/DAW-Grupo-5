@@ -1,0 +1,42 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : Nov 8, 2022, 7:35:54 PM
+    Author     : elena
+*/
+.back2 {
+    background:  url(https://img.freepik.com/foto-gratis/equipo-peluqueria-espacio-copia_23-2148352849.jpg?w=740&t=st=1666150332~exp=1666150932~hmac=f8ef48603b83e5d86ab121c55367b20ccde1549d3da1952b17f48ea9e0418663) no-repeat top center ;
+    background-size:100%;
+    background-attachment: fixed;
+
+}
+
+/*jumbotron promociones*/
+.lead{
+    padding: 40px;
+}
+
+/*promocion, cupones*/
+.coupon {
+  border: 5px dotted black; /* Dotted border */
+  width: 80%;
+  border-radius: 15px; /* Rounded border */
+  margin: 0 auto; /* Center the coupon */
+  max-width: 600px;
+}
+
+.container {
+  padding: 2px 16px;
+  background-color: #f1f1f1;
+}
+
+.promo {
+  background: #ccc;
+  padding: 3px;
+}
+
+.expire {
+  color: red;
+}
