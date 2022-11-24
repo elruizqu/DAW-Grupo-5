@@ -36,17 +36,17 @@ public class SalonController {
     
     @GetMapping("/salonServicios")
     public String servicios(){
-        return "Servicios";
+        return "Servicios/Servicios";
     }
     
     @GetMapping("/salonProductos")
     public String productos(){
-        return "Productos";
+        return "Productos/Productos";
     }
     
     @GetMapping("/salonPromociones")
     public String promociones(){
-        return "Promociones";
+        return "Promociones/Promociones";
     }
     
     @GetMapping("/salonCita")
@@ -54,7 +54,7 @@ public class SalonController {
         List<Cita> listaCita = citaService.getAllCita();
         model.addAttribute("titulo", "Citas Agendadas");
         model.addAttribute("citas", listaCita);
-        return "citas";
+        return "citas/citas";
     }
     
     @GetMapping("/salonAgendar")
@@ -62,7 +62,7 @@ public class SalonController {
         List<Servicio> listaServicios = servicioService.listServicio();
         model.addAttribute("cita", new Cita());
         model.addAttribute("servicios", listaServicios);
-        return "crear";
+        return "crear/crear";
     }
     
     @GetMapping("/salonContacto")

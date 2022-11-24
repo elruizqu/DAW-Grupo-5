@@ -1,4 +1,4 @@
-<html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
     <head>
         <title>Servicios</title>
         <meta charset="UTF-8">
@@ -8,7 +8,7 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
 
     </head>
-    <a href="/home" class="btn btn-dark">HOME</a>
+    <a th:text="#{index.hogar}" href="/home" class="btn btn-dark">HOME</a>
     <body class="back2">
        <div  class="carrusel">       
             <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="false">
@@ -23,7 +23,7 @@
                         <div class="imagen">
                         <img src="images/planchado.jpg" class="d-block w-100" alt="Planchado">
                         <div class="texto-encima">
-                            <h3>PLANCHADO: ₡5.000</h3>
+                            <h3 th:text="#{servicios.planchado}">PLANCHADO: ₡5.000</h3>
                         </div>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                         <div class="imagen">
                         <img src="images/maquillaje.jpg" class="d-block w-100" alt="maquillaje">
                         <div class="texto-encima">
-                            <h3>MAQUILLAJE: ₡25.000</h3>
+                            <h3 th:text="#{servicios.maquillaje}">MAQUILLAJE: ₡25.000</h3>
                         </div>
                         </div>
                     </div>
@@ -39,7 +39,7 @@
                         <div class="imagen">
                         <img src="images/tinte.jpg" class="d-block w-100" alt="tinte">
                         <div class="texto-encima">
-                            <h3>TINTE: ₡40.000</h3>
+                            <h3 th:text="#{servicios.tinte}">TINTE: ₡40.000</h3>
                         </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                         <div class="imagen">
                         <img src="images/corte.jpg" class="d-block w-100" alt="corte">
                         <div class="texto-encima">
-                            <h3>CORTE: ₡7.000</h3>
+                            <h3 th:text="#{servicios.corte}">CORTE: ₡7.000</h3>
                         </div>
                         </div>
                     </div>
@@ -63,4 +63,8 @@
             </div>
         </div>
     </body>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
 </html>

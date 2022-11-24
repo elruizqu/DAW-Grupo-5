@@ -13,24 +13,28 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <link rel="stylesheet" href="css/index.css"/>
 
     <nav>
-        <a href="#">Inicio</a>
-        <a href="/salonServicios">Servicios</a>
-        <a href="/salonProductos">Productos</a>
-        <a href="/salonPromociones">Promociones</a> 
-        <a href="/salonCita">Citas Agendadas</a>
-        <a href="/salonAgendar">Agendar Cita</a>
-        <a href="/salonContacto">Contacto</a>
+        <a th:text="#{index.inicio}" href="#">Inicio</a>
+        <a th:text="#{index.servicios}" href="/salonServicios">Servicios</a>
+        <a th:text="#{index.productos}" href="/salonProductos">Productos</a>
+        <a th:text="#{index.promociones}" href="/salonPromociones">Promociones</a> 
+        <a th:text="#{index.citas}" href="/salonCita">Citas Agendadas</a>
+        <a th:text="#{index.agendar}" href="/salonAgendar">Agendar Cita</a>
+        <a th:text="#{index.contacto}" href="/salonContacto">Contacto</a>
     </nav>
-
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
 </head>
 <body class="back">
     <div>
-        <p class="block">No dejes que tu vida pase ante tí, sin emoción alguna. 
+        <p th:text="#{index.texto}" class="block">No dejes que tu vida pase ante tí, sin emoción alguna. 
             Convierteté en una estrella del glamour, de la mano de nuestros especialistas.
             Tu cabello y cutis merecen ser tratados como una obra de arte. Ven y realiza el cambio que tanto anhelas.
             Ofrecemos diferentes servicios de belleza tanto para mujeres como para hombres. Tu cuerpo es tu templo y tu lugar de vida
             <a target="_blank" href="tryit.asp?filename=trycss_text">"WhatsApp"</a> link.</p>
     </div>
 </body>
+
 
 </html>
