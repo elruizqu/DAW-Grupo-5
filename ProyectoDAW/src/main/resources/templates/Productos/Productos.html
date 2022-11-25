@@ -13,7 +13,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <link rel="stylesheet" href="css/productos.css"/>
 
     </head>
-    <a href="/home" class="btn btn-dark">HOME</a>
+    <a th:text="#{index.inicio}" href="/home" class="btn btn-dark">HOME</a>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
     <body class = "back2">
         <div class='cards'>
             <div class="row row-cols-1 row-cols-md-3 g-4">
@@ -22,7 +26,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                         <img th:src="@{/images/shampoo.jpg}" class="card-img-top" alt="shampoo">
                         <div class="card-body">
                             <h5 class="card-title">SHAMPOO</h5>
-                            <p class="card-text">Contamos con las mejores marcas de 
+                            <p th:text="#{producto.shampooTxt}" class="card-text">Contamos con las mejores marcas de 
                                 Shampoo para cabello decolorado que cuidaran tus hermosos rayitos.</p>
                             <a href="#" class="btn btn-primary">Agregar a la lista</a>
                         </div>
@@ -32,8 +36,8 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <div class="card h-100">
                         <img th:src="@{/images/tratamiento.jpg}" class="card-img-top" alt="shampoo">
                         <div class="card-body">
-                            <h5 class="card-title">TRATAMIENTO PARA CABELLO MALTRATADO</h5>
-                            <p class="card-text">Recupera la vida de tu cabello con nuestros tratamientos. 
+                            <h5 th:text="#{producto.tratamiento}" class="card-title">TRATAMIENTO PARA CABELLO MALTRATADO</h5>
+                            <p th:text="#{producto.tratamientoTxt}" class="card-text">Recupera la vida de tu cabello con nuestros tratamientos. 
                                 Le brindaran brillo y un excelente aroma a tu cabello.</p>
                             <a href="#" class="btn btn-primary">Agregar a la lista</a>
                         </div>
@@ -54,7 +58,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <div class="card h-100">
                         <img th:src="@{/images/gotas.jpg}" class="card-img-top" alt="shampoo">
                         <div class="card-body">
-                            <h5 class="card-title">GOTAS DE ARGAN</h5>
+                            <h5 class="card-title">ACEITE DE ARGAN</h5>
                             <p class="card-text">Este aceite es perfecto para el cuidado del cabello despues 
                                 del planchado para darle brillo y movilidad a tu cabello.</p>
                             <a href="#" class="btn btn-primary">Agregar a la lista</a>
@@ -108,4 +112,5 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
             </div>
         </div>
     </body>
+    
 </html>

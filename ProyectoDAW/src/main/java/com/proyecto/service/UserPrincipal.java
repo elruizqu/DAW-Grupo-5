@@ -69,7 +69,7 @@ public class UserPrincipal implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return this.cita.getActive()==1;
+        return this.cita.getActive() == 1;
     }
 
 }

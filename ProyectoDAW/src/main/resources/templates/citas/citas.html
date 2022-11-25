@@ -14,17 +14,17 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     </head>
     <body class = "back2">
         <h1 th:text="${titulo}" class="textoCitas"></h1>
-            <a href="/home" class="btn btn-dark">HOME</a>
+            <a th:text="#{index.inicio}" href="/home" class="btn btn-dark">HOME</a>
 
         <table class="table">
             <thead class="table-dark">
                 <tr>
-                    <th scope="col">Numero de cita</th>
-                    <th scope="col">Cliente</th>
-                    <th scope="col">Fecha y Hora</th>
-                    <th scope="col">Servicio</th>
-                    <th scope="col">Editar</th>
-                    <th scope="col">Eliminar</th>
+                    <th th:text="#{crear.numero}" scope="col">Numero de cita</th>
+                    <th th:text="#{crear.nombre}" scope="col">Cliente</th>
+                    <th th:text="#{crear.fechayhora}" scope="col">Fecha y Hora</th>
+                    <th th:text="#{crear.servicio}" scope="col">Servicio</th>
+                    <th th:text="#{accion.actualizar}" scope="col">Editar</th>
+                    <th th:text="#{accion.eliminar}" scope="col">Eliminar</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,14 +35,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
                     <td th:text="${user.getFechahora}"></td>
                     <td th:text="${user.getServicio.getServicio}"></td>
                     <td>
-                        <a th:href="@{/editCita/{id}(id=${user.getId})}">Edit</a>
+                        <a th:text="#{accion.actualizar}" th:href="@{/editCita/{id}(id=${user.getId})}">Edit</a>
                     </td>
                     <td>
-                        <a th:href="@{/delete/{id}(id=${user.getId})}">Delete</a>
+                        <a th:text="#{accion.eliminar}" th:href="@{/delete/{id}(id=${user.getId})}">Delete</a>
                     </td>
                 </tr>
             </th:block>
         </tbody>
     </table>
 </body>
+<a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
 </html>

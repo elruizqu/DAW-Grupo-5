@@ -64,12 +64,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/home","/login", "/salonCita","/salonAgendar","/save","/editCita/{id}","/delete/{id}")
+                .antMatchers("/home", "/login", "/salonCita","/salonAgendar","/save","/editCita/{id}","/delete/{id}")
                 .hasRole("ADMIN") //admin solo ve las citas y su manejo
                 
                 .antMatchers("/home", "/", "/login","/salonServicios","/salonProductos","/salonPromociones",
                         "/salonAgendar", "/salonContacto","/save")
-                .hasAnyRole("USER") //Usuarios acceden a todo menos citas agendadas 
+                .hasAnyRole("USER", "ADMIN") //Usuarios acceden a todo menos citas agendadas 
                 
                 .anyRequest().authenticated()
                 .and()
