@@ -16,4 +16,5 @@ public interface ICitaService {
     public Cita getCitaById(long id);
     public void saveCita(Cita cita);
     public void delete(long id);
+    public Cita findByNombre(String nombre);
 }

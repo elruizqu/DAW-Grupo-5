@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 
 /**
  *
- * @author elena
+ * @author owen
  */
 @Repository
 public interface CitaRepository extends CrudRepository<Cita,Long>{
-    
+     Cita findByNombre (String nombre);
 }

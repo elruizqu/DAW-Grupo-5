@@ -38,5 +38,10 @@ public class CitaService implements ICitaService{
     public void delete(long id) {
         citaRepository.deleteById(id);
     }
+
+    @Override
+    public Cita findByNombre(String nombre) {
+      return citaRepository.findByNombre(nombre);
+    }
     
 }
