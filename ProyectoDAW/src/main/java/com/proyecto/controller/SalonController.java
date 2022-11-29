@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 /**
  *
- * @author elena
+ * @author owena
  */
 @Controller
 public class SalonController {
