@@ -5,8 +5,10 @@
 package com.proyecto.controller;
 
 import com.proyecto.entity.Cita;
+import com.proyecto.entity.Producto;
 import com.proyecto.entity.Servicio;
 import com.proyecto.service.ICitaService;
+import com.proyecto.service.IProductoService;
 import com.proyecto.service.IServicioService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +31,9 @@ public class SalonController {
     @Autowired
     private IServicioService servicioService;
     
+    @Autowired
+    private IProductoService productoService;
+    
     @GetMapping("/home")
     public String index(){
         return "index";
@@ -47,6 +52,39 @@ public class SalonController {
     @GetMapping("/salonPromociones")
     public String promociones(){
         return "Promociones/Promociones";
+    }
+    
+    @GetMapping("/Shampoo")
+    public String Shampoo(){
+        return "Productos/Shampoo";
+    }
+    
+    @GetMapping("/comprarProductos")
+    public String producto(Model model){
+        List<Producto> listaProductos = productoService.listProducto();
+        model.addAttribute("titulo", "Productos por comprar");
+        model.addAttribute("productos", listaProductos);
+        return "comprarProductos/comprarProductos";
+    }
+    
+    @GetMapping("/agregar/{id}")
+    public String agregarProd(Model model){
+        List<Producto> listaProductos = productoService.listProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "comprarProductos/comprarProductos";
+    }
+    
+    @PostMapping("/saveProd")
+    public String guardarProducto(@ModelAttribute Producto producto){
+        productoService.saveProducto(producto);
+        return "redirect:/comprarProductos";
+    }
+    
+    @GetMapping("/deleteProd/{id}")
+    public String eliminarProd(@PathVariable("id") Long idProducto){
+        productoService.delete(idProducto);
+        return "redirect:/comprarProductos";
     }
     
     @GetMapping("/salonCita")
