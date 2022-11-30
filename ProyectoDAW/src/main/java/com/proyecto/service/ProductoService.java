@@ -21,7 +21,7 @@ public class ProductoService implements IProductoService{
     private ProductoRepository productoRepository;
 
     @Override
-    public List<Producto> listProducto() {
+    public List<Producto> getAllProducto() {
         return (List<Producto>) productoRepository.findAll();
     }
 
@@ -40,5 +40,9 @@ public class ProductoService implements IProductoService{
         productoRepository.deleteById(id);
     }
 
-   
+    @Override
+    public Producto findByProducto(String producto) {
+      return productoRepository.findByProducto(producto);
+    }
+
 }

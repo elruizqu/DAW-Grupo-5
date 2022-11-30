@@ -12,8 +12,9 @@ import java.util.List;
  * @author elena
  */
 public interface IProductoService {
-    public List<Producto> listProducto();
+    public List<Producto> getAllProducto();
     public Producto getProductoById(long id);
     public void saveProducto(Producto producto);
     public void delete(long id);
+    public Producto findByProducto(String producto);
 }

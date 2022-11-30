@@ -54,25 +54,28 @@ public class SalonController {
         return "Promociones/Promociones";
     }
     
-    @GetMapping("/Shampoo")
-    public String Shampoo(){
-        return "Productos/Shampoo";
-    }
-    
     @GetMapping("/comprarProductos")
     public String producto(Model model){
-        List<Producto> listaProductos = productoService.listProducto();
+        List<Producto> listaProductos = productoService.getAllProducto();
         model.addAttribute("titulo", "Productos por comprar");
         model.addAttribute("productos", listaProductos);
         return "comprarProductos/comprarProductos";
     }
     
-    @GetMapping("/agregar/{id}")
-    public String agregarProd(Model model){
-        List<Producto> listaProductos = productoService.listProducto();
+    @GetMapping("/Shampoo")
+    public String Shampoo(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
         model.addAttribute("producto", new Producto());
         model.addAttribute("productos", listaProductos);
-        return "comprarProductos/comprarProductos";
+        return "Productos/Shampoo";
+    }
+    
+    @GetMapping("/Tratamiento")
+    public String Tratamiento(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "Productos/Tratamiento";
     }
     
     @PostMapping("/saveProd")
