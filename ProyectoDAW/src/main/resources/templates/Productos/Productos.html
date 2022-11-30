@@ -19,98 +19,98 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
     <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
        th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
     <body class = "back2">
-        <div class='cards'>
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/shampoo.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 class="card-title">SHAMPOO</h5>
-                            <p th:text="#{producto.shampooTxt}" class="card-text">Contamos con las mejores marcas de 
-                                Shampoo para cabello decolorado que cuidaran tus hermosos rayitos.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+            <div class='cards'>
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/shampoo.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 class="card-title">SHAMPOO</h5>
+                                <p th:text="#{producto.shampooTxt}" class="card-text">Contamos con las mejores marcas de 
+                                    Shampoo para cabello decolorado que cuidaran tus hermosos rayitos.</p>
+                                <a href="/Shampoo" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/tratamiento.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 th:text="#{producto.tratamiento}" class="card-title">TRATAMIENTO PARA CABELLO MALTRATADO</h5>
-                            <p th:text="#{producto.tratamientoTxt}" class="card-text">Recupera la vida de tu cabello con nuestros tratamientos. 
-                                Le brindaran brillo y un excelente aroma a tu cabello.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/tratamiento.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 th:text="#{producto.tratamiento}" class="card-title">TRATAMIENTO PARA CABELLO MALTRATADO</h5>
+                                <p th:text="#{producto.tratamientoTxt}" class="card-text">Recupera la vida de tu cabello con nuestros tratamientos. 
+                                    Le brindaran brillo y un excelente aroma a tu cabello.</p>
+                                <a href="/comprarProductos" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/crema risos.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 class="card-title">CREMA PARA RIZOS</h5>
-                            <p class="card-text">Una crema que sí define tus rizos, controlando el frizz. 
-                                El uso diario de este producto aportara volumen y brillo a tus rizos.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/crema risos.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 class="card-title">CREMA PARA RIZOS</h5>
+                                <p class="card-text">Una crema que sí define tus rizos, controlando el frizz. 
+                                    El uso diario de este producto aportara volumen y brillo a tus rizos.</p>
+                                <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/gotas.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 class="card-title">ACEITE DE ARGAN</h5>
-                            <p class="card-text">Este aceite es perfecto para el cuidado del cabello despues 
-                                del planchado para darle brillo y movilidad a tu cabello.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/gotas.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 class="card-title">ACEITE DE ARGAN</h5>
+                                <p class="card-text">Este aceite es perfecto para el cuidado del cabello despues 
+                                    del planchado para darle brillo y movilidad a tu cabello.</p>
+                                <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/esmaltes.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 class="card-title">ESMALTE DE UÑAS</h5>
-                            <p class="card-text">Te brindamos los esmaltes de la mejor 
-                                calidad del mercado, que ayudaran al crecimiento de tus uñas.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/esmaltes.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 class="card-title">ESMALTE DE UÑAS</h5>
+                                <p class="card-text">Te brindamos los esmaltes de la mejor 
+                                    calidad del mercado, que ayudaran al crecimiento de tus uñas.</p>
+                                <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/sombras.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 class="card-title">SOMBRAS DE OJOS</h5>
-                            <p class="card-text">Tenemos esos colores que haran resaltar tus ojos y
-                                tu maquillaje con la mejor pigmentación para facilitar la aplicación.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/sombras.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 class="card-title">SOMBRAS DE OJOS</h5>
+                                <p class="card-text">Tenemos esos colores que haran resaltar tus ojos y
+                                    tu maquillaje con la mejor pigmentación para facilitar la aplicación.</p>
+                                <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/labiales.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 class="card-title">LABIALES</h5>
-                            <p class="card-text">Te brindamos gran variedad de labiales 
-                                mate y lip gloss, que te haran lucir unos labios hermosos.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/labiales.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 class="card-title">LABIALES</h5>
+                                <p class="card-text">Te brindamos gran variedad de labiales 
+                                    mate y lip gloss, que te haran lucir unos labios hermosos.</p>
+                                <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="card h-100">
-                        <img th:src="@{/images/mascarillas.jpg}" class="card-img-top" alt="shampoo">
-                        <div class="card-body">
-                            <h5 class="card-title">MASCARILLAS FACIALES</h5>
-                            <p class="card-text">Cuida tu piel hidratandola, humectandola y 
-                                limpiandola con mascarillas faciales. Te ayudaran a tener un cutis perfecto.</p>
-                            <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                    <div class="col">
+                        <div class="card h-100">
+                            <img th:src="@{/images/mascarillas.jpg}" class="card-img-top" alt="shampoo">
+                            <div class="card-body">
+                                <h5 class="card-title">MASCARILLAS FACIALES</h5>
+                                <p class="card-text">Cuida tu piel hidratandola, humectandola y 
+                                    limpiandola con mascarillas faciales. Te ayudaran a tener un cutis perfecto.</p>
+                                <a href="#" class="btn btn-primary">Agregar a la lista</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </body>
-    
+
 </html>

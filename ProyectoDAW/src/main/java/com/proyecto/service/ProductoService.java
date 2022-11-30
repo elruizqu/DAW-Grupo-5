@@ -24,5 +24,21 @@ public class ProductoService implements IProductoService{
     public List<Producto> listProducto() {
         return (List<Producto>) productoRepository.findAll();
     }
+
+    @Override
+    public Producto getProductoById(long id) {
+        return productoRepository.findById(id).orElse(null);
+    }
+
+    @Override
+    public void saveProducto(Producto producto) {
+        productoRepository.save(producto);
+    }
+
+    @Override
+    public void delete(long id) {
+        productoRepository.deleteById(id);
+    }
+
    
 }
