@@ -70,6 +70,11 @@ public class SalonController {
         return "Contacto/Contacto";
     }
     
+    @GetMapping("/salonEnviado")
+    public String enviado(){
+        return "Contacto/Enviado";
+    }
+    
     @PostMapping("/save")
     public String guardarCita(@ModelAttribute Cita cita){
         citaService.saveCita(cita);

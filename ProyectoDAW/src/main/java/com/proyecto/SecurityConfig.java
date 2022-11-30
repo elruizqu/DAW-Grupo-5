@@ -23,7 +23,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
-    
+
     @Autowired
     private UserService userDetailsService;
 
@@ -59,31 +59,47 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         auth.authenticationProvider(authenticationProvider());
     }
 
-    
     // Para autenticar al usuario
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/home", "/login", "/salonCita","/salonAgendar","/save","/editCita/{id}","/delete/{id}")
+                .antMatchers("/login", "/home", "/salonCita", "/salonAgendar", "/save", "/editCita/{id}", "/delete/{id}")
                 .hasRole("ADMIN") //admin solo ve las citas y su manejo
-                
-                .antMatchers("/home", "/", "/login","/salonServicios","/salonProductos","/salonPromociones",
-                        "/salonAgendar", "/salonContacto","/save")
+
+                .antMatchers("/login", "/home", "/", "/salonServicios", "/salonProductos", "/salonPromociones",
+                        "/salonAgendar", "/salonContacto", "/save", "/salonEnviado")
                 .hasAnyRole("USER", "ADMIN") //Usuarios acceden a todo menos citas agendadas 
-                
+
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/login").permitAll().defaultSuccessUrl("/home", true);
     }
-    
-    /* http.authorizeRequests()
-            .antMatchers ("/Persona", "/login")
-            .hasRole("ADMIN")
-            .hasAnyRole("USER", "VENDEDOR", "ÄDMIN")
-            .anyRquest().authenticated()
-            and()
-            .formLogin()
-         */
 
+             /* http.authorizeRequests()
+                 http.csrf().disable();
+                 http.headers().frameoptions().disable;
+    
+    .            antMatchers("/login","/home","/salonCita","/salonAgendar","/save","/editCita/{id}","/delete/{id}")
+                .hasRole("ADMIN") //admin solo ve las citas y su manejo
+                
+                .antMatchers("/login","/home", "/","/salonServicios","/salonProductos","/salonPromociones",
+                        "/salonAgendar", "/salonContacto","/save")
+                .hasRole("USER") //Usuarios acceden a todo menos citas agendadas 
+                
+                .anyRquest().authenticated()
+                 and()
+                .formLogin()
+                .loginPage("/login").permitAll().defaultSuccessUrl("/home", true);
+    
+    otro intento
+                http
+			.csrf().disable()
+			.authorizeRequests().antMatchers("/login").permitAll()
+			.anyRequest().authenticated()
+			.and()
+			.formLogin().loginPage("/login").permitAll().defaultSuccessUrl("/home", true);
+	}
+    
+     */
 }
