@@ -16,5 +16,5 @@ public interface IProductoService {
     public Producto getProductoById(long id);
     public void saveProducto(Producto producto);
     public void delete(long id);
-    public Producto findByProducto(String producto);
+    public Producto findByNombre(String nombre);
 }

@@ -13,103 +13,168 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this temp
         <link rel="stylesheet" href="css/promociones.css"/>
 
     </head>
-    <a href="/home" class="btn btn-dark">HOME</a>
+    <a th:text="#{index.inicio}" href="/home" class="btn btn-dark">HOME</a>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','es').toUriString()}">ES</a>
+    <a th:with="urlBuilder=${T(org.springframework.web.servlet.support.ServletUriComponentsBuilder).fromCurrentRequest()}"
+       th:href="${urlBuilder.replaceQueryParam('lang','en').toUriString()}">EN</a>
     <body class = "back2">
 
         <br><br>
         <div class="container">
             <div class="jumbotron">
-                <h1 class="display-4">Promociones Fin de Año</h1>
-                <p class="lead">Promociones por tiempo limitado. Aprovecha nuestros descuentos de fin de año.</p>
+                <h1 th:text="#{promociones.titulo}" class="display-4">Promociones Fin de Año</h1>
+                <p th:text="#{promociones.box1}" class="lead">Promociones por tiempo limitado. Aprovecha nuestros descuentos de fin de año.</p>
                 <hr class="my-4">
-                <p class="lead">Si ya eres cliente frecuente, obtendras una regalia al hacer uso de 
+                <p th:text="#{promociones.box2}" class="lead">Si ya eres cliente frecuente, obtendras una regalia al hacer uso de 
                     alguno de nuestros servicios o compra de nuestros productos.</p>
-                <a class="btn btn-primary btn-lg" href="#" role="button">Soy Cliente frecuente</a>
-            </div>
+                <!-- <a th:text="#{promociones.boton}" class="btn btn-primary btn-lg" href="#" role="button">Soy Cliente frecuente</a> -->
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active">
-                    Promociones para regalar
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Depilacion - 3 sesiones - antes: ₡15,000   ------------------------------------>  Ahora: ₡12,000</a>
-                <a href="#" class="list-group-item list-group-item-action">Maquillaje para Graduaciones - 1 sesion - antes: ₡10,200   ----------------->  Ahora ₡5,500   </a>
-                <a href="#" class="list-group-item list-group-item-action">Peinados en tendencia - 2 sesion - antes: ₡6,200  --------------------------> Ahora ₡4,200  </a>
-                <a href="#" class="list-group-item list-group-item-action disabled">Uñas - 4 sesiones - antes: ₡13,200 ----------------------------------------->  Ahora ₡7,500  </a>
-            </div>
-            <br><br>
+                <!-- Modal -->
+                <form>
+                    <button type="reset" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-whatever="@mdo">Soy Cliente frecuente</button>
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active">
-                    Promociones para Caballeros
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Sesion barba caballero - antes: ₡7,000   --------------------------->  Ahora: ₡3,000</a>
-                <a href="#" class="list-group-item list-group-item-action">Mascarilla y exfoliacion  - antes: ₡10,200   ------------------------->  Ahora ₡5,500   </a>
-                <a href="#" class="list-group-item list-group-item-action">Corte de pelo para 2 personas - antes: ₡12,200  -----------------> Ahora ₡8,200  </a>
-                <a href="#" class="list-group-item list-group-item-action disabled">Cejas y marcacion - antes: ₡5,100 ------------------------------->  Ahora ₡2,500  </a>
-            </div>
-            <br><br>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Sección Cliente Frecuente</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
 
-            <div class="list-group">
-                <a href="#" class="list-group-item list-group-item-action active">
-                    Promociones para Damas
-                </a>
-                <a href="#" class="list-group-item list-group-item-action">Keratina - antes: ₡40,000   --------------->  Ahora: ₡32,000</a>
-                <a href="#" class="list-group-item list-group-item-action">Botox  - antes: ₡37,200   ----------------->  Ahora ₡30,500   </a>
+                                    <div class="form-group">
+                                        <label for="recipient-name" class="col-form-label">Ingrese su correo electrónico:</label>
+                                        <input type="text" class="form-control" id="recipient-name">
+                                    </div>
+                                    Se validará en nuestro sistema si eres parte de nuestra lista de clientes frecuentes y te enviaremos la información
+                                    por correo electrónico para hacer uso de este beneficio. <br> Gracias por preferirnos!
 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <!-- Enviado -->
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#successModal" data-whatever="@mdo">Enviar</button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="alert alert-success" role="alert">
+                                                        Correo enviado. 
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
             </div>
-            <br><br>
-            <a href="salonContacto">Quiero mas informacion</a>
-            <br><br>
-        </div>
-
-        <br><br>
-        <div class="coupon">
-            <div class="container">
-                <h3>TRATAMIENTO KERATINA</h3>
-            </div>
-            <img src="images/keratina.jpg" alt="keratina" style="width:100%;">
-            <div class="container" style="background-color:white">
-                <h2><b>20% de descuento</b></h2>
-                <p>POR TIEMPO LIMITADO</p>
-            </div>
-            <div class="container">
-                <p>Usa el codigo promocional: <span class="promo">BOH232</span></p>
-                <p class="expire">Expira Enero 03, 2023</p>
-            </div>
-        </div>
-
-        <br><br>
-        <div class="coupon">
-            <div class="container">
-                <h3>TRATAMIENTO CURLY HAIR</h3>
-            </div>
-            <img src="images/colochos.jpg" alt="colochos" style="width:100%;">
-            <div class="container" style="background-color:white">
-                <h2><b>35% de descuento</b></h2>
-                <p>POR TIEMPO LIMITADO</p>
-            </div>
-            <div class="container">
-                <p>Usa el codigo promocional: <span class="promo">EDT187</span></p>
-                <p class="expire">Expira Diciembre 08, 2022</p>
-            </div>
+        </form>
+        <div class="list-group">
+            <font color="white" th:text="#{promociones.box3}" class="list-group-item list-group-item-action active">
+            Promociones para regalar
+            </font>
+            <a th:text="#{promociones.depilacion}" href="/PromocionInfo" class="list-group-item list-group-item-action">Depilacion - 3 sesiones - antes: ₡15,000   ------------------------------------>  Ahora: ₡12,000</a>
+            <a th:text="#{promociones.maquillaje}" href="/PromocionInfo" class="list-group-item list-group-item-action">Maquillaje para Graduaciones - 1 sesion - antes: ₡10,200   ----------------->  Ahora ₡5,500   </a>
+            <a th:text="#{promociones.peinados}" href="/PromocionInfo" class="list-group-item list-group-item-action">Peinados en tendencia - 2 sesion - antes: ₡6,200  --------------------------> Ahora ₡4,200  </a>
+            <a th:text="#{promociones.uñas}" href="/PromocionInfo" class="list-group-item list-group-item-action">Uñas - 4 sesiones - antes: ₡13,200 ----------------------------------------->  Ahora ₡7,500  </a>
         </div>
         <br><br>
 
-        <div class="coupon">
-            <div class="container">
-                <h3>TRATAMIENTO DE CACAO - BRILLO</h3>
-            </div>
-            <img src="images/cacao.jpg" alt="cacao" style="width:100%;">
-            <div class="container" style="background-color:white">
-                <h2><b>15% de descuento</b></h2>
-                <p>POR TIEMPO LIMITADO</p>
-            </div>
-            <div class="container">
-                <p>Usa el codigo promocional: <span class="promo">PLQ238</span></p>
-                <p class="expire">Expira Noviembre 22, 2022</p>
-            </div>
+        <div class="list-group">
+            <font color="white"th:text="#{promociones.box4}" class="list-group-item list-group-item-action active">
+            Promociones para Caballeros
+            </font>
+            <a th:text="#{promociones.barba}" href="/PromocionInfo" class="list-group-item list-group-item-action">Sesion barba caballero - antes: ₡7,000   --------------------------->  Ahora: ₡3,000</a>
+            <a th:text="#{promociones.mascarilla}" href="/PromocionInfo" class="list-group-item list-group-item-action">Mascarilla y exfoliacion  - antes: ₡10,200   ------------------------->  Ahora ₡5,500   </a>
+            <a th:text="#{promociones.corte}" href="/PromocionInfo" class="list-group-item list-group-item-action">Corte de pelo para 2 personas - antes: ₡12,200  -----------------> Ahora ₡8,200  </a>
+            <a th:text="#{promociones.cejas}" href="/PromocionInfo" class="list-group-item list-group-item-action">Cejas y marcacion - antes: ₡5,100 ------------------------------->  Ahora ₡2,500  </a>
         </div>
         <br><br>
 
-    </body>
+        <div class="list-group">
+            <font color="white" th:text="#{promociones.damas}" class="list-group-item list-group-item-action active">
+            Promociones para Damas
+            </font>
+            <a th:text="#{promociones.keratina}" href="/PromocionInfo" class="list-group-item list-group-item-action">Keratina - antes: ₡40,000   --------------->  Ahora: ₡32,000</a>
+            <a th:text="#{promociones.botox}" href="/PromocionInfo" class="list-group-item list-group-item-action">Botox  - antes: ₡37,200   ----------------->  Ahora ₡30,500   </a>
+
+        </div>
+        <br><br>
+        <a th:text="#{promociones.informacion}" href="salonContacto">Quiero mas informacion</a>
+        <br><br>
+    </div>
+
+    <br><br>
+    <div class="coupon">
+        <div class="container">
+            <h3 th:text="#{promociones.card1}">TRATAMIENTO KERATINA</h3>
+        </div>
+        <img src="images/keratina.jpg" alt="keratina" style="width:100%;">
+        <div class="container" style="background-color:white">
+            <h2 th:text="#{promociones.card1Desc}"><b>20% de descuento</b></h2>
+            <p th:text="#{promociones.cardTiemp}">POR TIEMPO LIMITADO</p>
+        </div>
+        <div class="container">
+            <p th:text="#{promociones.card1Cod}" >Usa el codigo promocional: <span class="promo">BOH232</span></p>
+            <p th:text="#{promociones.card1Exp}" class="expire">Expira Enero 03, 2023</p>
+        </div>
+    </div>
+
+    <br><br>
+    <div class="coupon">
+        <div class="container">
+            <h3 th:text="#{promociones.card2}">TRATAMIENTO CURLY HAIR</h3>
+        </div>
+        <img src="images/colochos.jpg" alt="colochos" style="width:100%;">
+        <div class="container" style="background-color:white">
+            <h2 th:text="#{promociones.card2Desc}"><b>35% de descuento</b></h2>
+            <p th:text="#{promociones.cardTiemp}">POR TIEMPO LIMITADO</p>
+        </div>
+        <div class="container">
+            <p th:text="#{promociones.card2Cod}">Usa el codigo promocional: <span class="promo">EDT187</span></p>
+            <p th:text="#{promociones.card2Exp}" class="expire">Expira Diciembre 08, 2022</p>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="coupon">
+        <div class="container">
+            <h3 th:text="#{promociones.card3}">TRATAMIENTO DE CACAO - BRILLO</h3>
+        </div>
+        <img src="images/cacao.jpg" alt="cacao" style="width:100%;">
+        <div class="container" style="background-color:white">
+            <h2 th:text="#{promociones.card3Desc}"><b>15% de descuento</b></h2>
+            <p th:text="#{promociones.cardTiemp}">POR TIEMPO LIMITADO</p>
+        </div>
+        <div class="container">
+            <p th:text="#{promociones.card3Cod}">Usa el codigo promocional: <span class="promo">PLQ238</span></p>
+            <p th:text="#{promociones.card3Exp}" class="expire">Expira Noviembre 22, 2022</p>
+        </div>
+    </div>
+    <br><br>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</body>
+
 </html>

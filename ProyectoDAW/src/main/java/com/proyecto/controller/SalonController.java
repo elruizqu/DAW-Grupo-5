@@ -54,6 +54,11 @@ public class SalonController {
         return "Promociones/Promociones";
     }
     
+    @GetMapping("/PromocionInfo")
+    public String promocionesInfo(){
+        return "Promociones/PromocionInfo";
+    }
+    
     @GetMapping("/comprarProductos")
     public String producto(Model model){
         List<Producto> listaProductos = productoService.getAllProducto();
@@ -76,6 +81,54 @@ public class SalonController {
         model.addAttribute("producto", new Producto());
         model.addAttribute("productos", listaProductos);
         return "Productos/Tratamiento";
+    }
+    
+    @GetMapping("/Crema")
+    public String Crema(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "Productos/Crema";
+    }
+    
+    @GetMapping("/Aceite")
+    public String Aceite(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "Productos/Aceite";
+    }
+    
+    @GetMapping("/Esmalte")
+    public String Esmalte(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "Productos/Esmalte";
+    }
+    
+    @GetMapping("/Sombras")
+    public String Sombras(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "Productos/Sombras";
+    }
+    
+    @GetMapping("/Labiales")
+    public String Labiales(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "Productos/Labiales";
+    }
+    
+    @GetMapping("/Mascarilla")
+    public String Mascarilla(Model model){
+        List<Producto> listaProductos = productoService.getAllProducto();
+        model.addAttribute("producto", new Producto());
+        model.addAttribute("productos", listaProductos);
+        return "Productos/Mascarilla";
     }
     
     @PostMapping("/saveProd")

@@ -18,12 +18,14 @@ import javax.persistence.Table;
 @Entity
 @Table (name="productos")
 public class Producto implements Serializable{
+    
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     
     private long id;
-    private String producto;
+    private String nombre;
     private int cantidad;
+    private String precio;
 
     public long getId() {
         return id;
@@ -33,12 +35,12 @@ public class Producto implements Serializable{
         this.id = id;
     }
 
-    public String getProducto() {
-        return producto;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setProducto(String producto) {
-        this.producto = producto;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public int getCantidad() {
@@ -48,6 +50,13 @@ public class Producto implements Serializable{
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
-    
-    
+
+    public String getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
+
 }

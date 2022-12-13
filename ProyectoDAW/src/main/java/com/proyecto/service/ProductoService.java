@@ -41,8 +41,10 @@ public class ProductoService implements IProductoService{
     }
 
     @Override
-    public Producto findByProducto(String producto) {
-      return productoRepository.findByProducto(producto);
+    public Producto findByNombre(String nombre) {
+      return productoRepository.findByNombre(nombre);
     }
+
+    
 
 }
